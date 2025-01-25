@@ -3,17 +3,15 @@ import { styles } from "../styles";
 import ComputerCanvas from "./canvas/Computers";
 import MotionBtn from "./MotionBtn";
 
-const Hero = () => {
-  const [isMobile, setIsMobile] = useState(false);
-
-  useEffect(() => {
-    if (window.innerWidth <= 450) {
-      setIsMobile(true);
-    }
-  }, []);
+const Hero = ({ isMobile }) => {
   return (
-    <section className="relative w-full h-screen mx-auto justify-center items-center bg-[url(./6173954.jpg)] bg-cover bg-center bg-no-repeat">
+    <section className="relative w-full  h-screen mx-auto justify-center items-center ">
       <div
+        style={{
+          //responsive padding
+          paddingLeft: isMobile ? "5px" : "54px",
+          paddingRight: isMobile ? "5px" : "64px",
+        }}
         className={`${styles.paddingX} absolute inset-0 top-[120px] max-w-7xl mx-auto flex flex-row items-start gap-5`}
       >
         <div className="flex flex-col justify-center items-center mt-5">

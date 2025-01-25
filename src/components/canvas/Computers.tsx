@@ -1,3 +1,4 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable react/no-unknown-property */
 import React, { Suspense, useRef, useEffect, useState } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
@@ -47,8 +48,8 @@ const Computers = ({ mobile }) => {
       <ambientLight intensity={0.5} />
       <primitive
         object={computer.scene}
-        scale={mobile ? 0.5 : 1}
-        position={mobile ? [0, -2, -1] : [0, -4.25, -1.5]}
+        scale={mobile ? 0.5 : 0.9}
+        position={mobile ? [0, -2.5, -1] : [0, -4.25, -1.5]}
         rotation={[-0.01, -0.2, -0.1]}
       />
     </mesh>

@@ -4,17 +4,23 @@ import { styles } from "../styles.js";
 import logo from "../assets/web.png";
 import menu from "../assets/menu.svg";
 import close from "../assets/close.svg";
-import { navLinks } from "../constants";
+import { navLinks } from "../constants/index.js";
 
 /* fix: paddings and styling */
 
-const Navbar = () => {
+const Navbar = ({ mobile }) => {
   const [active, setActive] = useState("");
   const [toggle, setToggle] = useState(false);
   useEffect(() => {}, []);
   return (
     <nav
-      className={`${styles.paddingX} w-full flex items-center py-5 fixed top-0 z-20 bg-primary`}
+      style={{
+        paddingLeft: mobile ? "5px" : "54px",
+        paddingRight: mobile ? "5px" : "64px",
+        paddingTop: mobile ? "5px" : "10px",
+        paddingBottom: mobile ? "5px" : "10px",
+      }}
+      className={`${styles.paddingX} w-full flex items-center py-5 fixed top-0 z-20 bg-[#000000ec]`}
     >
       <div className="w-full flex justify-between items-center max-w-7xl mx-auto ">
         <Link
@@ -36,8 +42,8 @@ const Navbar = () => {
             <li
               key={nav.title}
               className={`${
-                active === nav.title ? "text-white" : "text-gray-400"
-              } hover:text-white text-[18px] font-medium cursor-pointer`}
+                active === nav.title ? "text-white" : "text-gray-300"
+              } hover:text-white text-[18px] font-medium cursor-pointer font-montserrat uppercase`}
               onClick={() => {
                 setActive(nav.title);
               }}
