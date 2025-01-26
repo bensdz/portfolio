@@ -20,7 +20,7 @@ function App() {
 
     setIsMobile(mediaQuery.matches);
 
-    const handleMediaQueryChange = (event: any) => {
+    const handleMediaQueryChange = (event) => {
       setIsMobile(event.matches);
     };
 

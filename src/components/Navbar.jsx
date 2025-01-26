@@ -6,8 +6,6 @@ import menu from "../assets/menu.svg";
 import close from "../assets/close.svg";
 import { navLinks } from "../constants/index.js";
 
-/* fix: paddings and styling */
-
 const Navbar = ({ mobile }) => {
   const [active, setActive] = useState("");
   const [toggle, setToggle] = useState(false);

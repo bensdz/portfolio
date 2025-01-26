@@ -8,15 +8,6 @@ import { fadeIn, textVariant } from "../utils/motion";
 import SectionWrapper from "./hoc/SectionWrapper";
 import { Tilt } from "react-tilt";
 
-type ProjectCardProps = {
-  index: number;
-  name: string;
-  description: string;
-  tags: { name: string; color: string }[];
-  image: string;
-  source_code_link: string;
-};
-
 const ProjectCard = ({
   index,
   name,
@@ -24,7 +15,7 @@ const ProjectCard = ({
   tags,
   image,
   source_code_link,
-}: ProjectCardProps) => {
+}) => {
   return (
     <motion.div variants={fadeIn("up", "spring", index * 0.5, 0.75)}>
       <Tilt
