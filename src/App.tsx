@@ -4,12 +4,13 @@ import {
   About,
   Contact,
   Experience,
-  Feedbacks,
   Hero,
   Navbar,
   Tech,
   Works,
 } from "./components";
+import StarsCanvas from "./components/canvas/Stars";
+import Footer from "./components/Footer";
 
 function App() {
   const [isMobile, setIsMobile] = useState(false);
@@ -31,20 +32,20 @@ function App() {
   }, []);
   return (
     <BrowserRouter>
-      <div className="relative bg-primary">
+      <div className="relative bg-black-400">
         <div className="bg-[url(./6173954.jpg)] bg-cover bg-center bg-no-repeat">
           <Navbar mobile={isMobile} />
           <Hero isMobile={isMobile} />
         </div>
         <About />
         <Experience />
-        <Tech />
+        <Tech mobile={isMobile} />
         <Works />
-        <Feedbacks />
         <div className="relative z-0">
-          <Contact />
-          {/* <StarsCanvas /> */}
+          <Contact mobile={isMobile} />
+          <StarsCanvas />
         </div>
+        <Footer />
       </div>
     </BrowserRouter>
   );

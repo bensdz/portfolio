@@ -15,14 +15,15 @@ import {
   git,
   figma,
   docker,
-  meta,
-  starbucks,
-  tesla,
-  shopify,
   carrent,
   jobit,
   tripguide,
   threejs,
+  onm,
+  webdev,
+  app,
+  depano,
+  idstamp,
 } from "../assets";
 
 export const navLinks = [
@@ -104,10 +105,10 @@ const technologies = [
     name: "git",
     icon: git,
   },
-  {
-    name: "figma",
-    icon: figma,
-  },
+  // {
+  //   name: "figma",
+  //   icon: figma,
+  // },
   {
     name: "docker",
     icon: docker,
@@ -116,55 +117,37 @@ const technologies = [
 
 const experiences = [
   {
-    title: "React.js Developer",
-    company_name: "Starbucks",
-    icon: starbucks,
-    iconBg: "#383E56",
-    date: "March 2020 - April 2021",
+    title: "Full stack Web Developer",
+    company_name: "Freelance",
+    icon: webdev,
+    iconBg: "#E6DEDD",
+    date: "Jul 2022 - Present",
     points: [
       "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
       "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+    ],
+  },
+
+  {
+    title: "Intership - HPC Developer",
+    company_name: "National Office of Meteorology - Algiers",
+    icon: onm,
+    iconBg: "#383E56",
+    date: "Dec 2024 - Dec 2024",
+    points: [
+      "Introduced to HPC processes for weather forecasting.",
+      "Explored HPC infrastructure and parallel programming techniques.",
     ],
   },
   {
     title: "React Native Developer",
-    company_name: "Tesla",
-    icon: tesla,
+    company_name: "Freelance",
+    icon: app,
     iconBg: "#E6DEDD",
-    date: "Jan 2021 - Feb 2022",
+    date: "Oct 2024 - Present",
     points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
-    ],
-  },
-  {
-    title: "Web Developer",
-    company_name: "Shopify",
-    icon: shopify,
-    iconBg: "#383E56",
-    date: "Jan 2022 - Jan 2023",
-    points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
-    ],
-  },
-  {
-    title: "Full stack Developer",
-    company_name: "Meta",
-    icon: meta,
-    iconBg: "#E6DEDD",
-    date: "Jan 2023 - Present",
-    points: [
-      "Developing and maintaining web applications using React.js and other related technologies.",
-      "Collaborating with cross-functional teams including designers, product managers, and other developers to create high-quality products.",
-      "Implementing responsive design and ensuring cross-browser compatibility.",
-      "Participating in code reviews and providing constructive feedback to other developers.",
+      "Developing and maintaining apps using React Native & Expo and other related technologies.",
+      "Designing and implementing user interfaces for mobile applications.",
     ],
   },
 ];
@@ -198,68 +181,77 @@ const testimonials = [
 
 const projects = [
   {
-    name: "Car Rent",
+    name: "Depano - Fullstack Uber Clone",
     description:
-      "Web-based platform that allows users to search, book, and manage car rentals from various providers, providing a convenient and efficient solution for transportation needs.",
+      "A full-stack web application that allows users to book rides, track their location.",
     tags: [
       {
-        name: "react",
+        name: "reactnative",
         color: "blue-text-gradient",
       },
       {
-        name: "mongodb",
+        name: "mysql",
         color: "green-text-gradient",
       },
+
       {
-        name: "tailwind",
+        name: "nodejs",
+        color: "purple-text-gradient",
+      },
+      {
+        name: "expressjs",
         color: "pink-text-gradient",
       },
     ],
-    image: carrent,
-    source_code_link: "https://github.com/",
+    image: depano,
+    source_code_link: "https://github.com/bensdz/Depanoapp",
   },
   {
-    name: "Job IT",
+    name: "IDStamp - Fullstack KYC App & Website",
     description:
-      "Web application that enables users to search for job openings, view estimated salary ranges for positions, and locate available jobs based on their current location.",
+      "A full-stack web application that allows users to verify their identity using government-issued IDs.",
     tags: [
       {
-        name: "react",
+        name: "reactjs",
         color: "blue-text-gradient",
       },
       {
-        name: "restapi",
+        name: "flutter",
         color: "green-text-gradient",
       },
       {
-        name: "scss",
+        name: "expressjs",
         color: "pink-text-gradient",
       },
-    ],
-    image: jobit,
-    source_code_link: "https://github.com/",
-  },
-  {
-    name: "Trip Guide",
-    description:
-      "A comprehensive travel booking platform that allows users to book flights, hotels, and rental cars, and offers curated recommendations for popular destinations.",
-    tags: [
       {
-        name: "nextjs",
-        color: "blue-text-gradient",
-      },
-      {
-        name: "supabase",
-        color: "green-text-gradient",
-      },
-      {
-        name: "css",
-        color: "pink-text-gradient",
+        name: "aws",
+        color: "purple-text-gradient",
       },
     ],
-    image: tripguide,
+    image: idstamp,
     source_code_link: "https://github.com/",
   },
+  // {
+  //   name: "Woocommerce - External Payment Integration",
+  //   description:
+  //     "A plugin that allows users to pay for their orders using an external payment gateway.",
+  //   tags: [
+  //     {
+  //       name: "wordpress",
+  //       color: "blue-text-gradient",
+  //     },
+  //     {
+  //       name: "woocommerce",
+  //       color: "green-text-gradient",
+  //     },
+  //     {
+  //       name: "php",
+  //       color: "pink-text-gradient",
+  //     },
+  //   ],
+  //   image: jobit,
+  //   source_code_link: "https://github.com/bensdz/wc_custom_payment_gateway",
+  // },
 ];
 
 export { services, technologies, experiences, testimonials, projects };

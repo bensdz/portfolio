@@ -7,11 +7,6 @@ const Hero = ({ isMobile }) => {
   return (
     <section className="relative w-full  h-screen mx-auto justify-center items-center ">
       <div
-        style={{
-          //responsive padding
-          paddingLeft: isMobile ? "5px" : "54px",
-          paddingRight: isMobile ? "5px" : "64px",
-        }}
         className={`${styles.paddingX} absolute inset-0 top-[120px] max-w-7xl mx-auto flex flex-row items-start gap-5`}
       >
         <div className="flex flex-col justify-center items-center mt-5">
@@ -26,9 +21,6 @@ const Hero = ({ isMobile }) => {
           <p className={styles.heroSubText}>
             I am a Full Stack Developer, entrepreneur, and a tech enthusiast.
           </p>
-          {/* <div className="flex flex-row gap-3 mt-5">
-            <button className="btn-primary">Get Started</button>
-          </div> */}
         </div>
       </div>
 

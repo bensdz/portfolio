@@ -4,6 +4,8 @@ import creator from "./creator.png";
 import mobile from "./mobile.png";
 import web from "./web.png";
 import github from "./github.png";
+import linkedin from "./linkedin.png";
+import twitter from "./twitter.png";
 import menu from "./menu.svg";
 import close from "./close.svg";
 
@@ -25,10 +27,16 @@ import meta from "./company/meta.png";
 import shopify from "./company/shopify.png";
 import starbucks from "./company/starbucks.png";
 import tesla from "./company/tesla.png";
+import onm from "./company/onm.png";
+import freelance from "./company/freelance.png";
+import webdev from "./company/webdev.png";
+import app from "./company/app.png";
 
 import carrent from "./carrent.png";
 import jobit from "./jobit.png";
 import tripguide from "./tripguide.png";
+import depano from "./depano.png";
+import idstamp from "./idstamp.png";
 
 export {
   logo,
@@ -59,4 +67,12 @@ export {
   carrent,
   jobit,
   tripguide,
+  onm,
+  freelance,
+  webdev,
+  app,
+  depano,
+  idstamp,
+  linkedin,
+  twitter,
 };

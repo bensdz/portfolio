@@ -46,7 +46,11 @@ const ExperienceCard = ({ experience, index }) => {
         {experience.company_name}
       </motion.h4>
       <motion.p className="mt-4" variants={textVariant()}>
-        {experience.description}
+        {experience.points.map((point, index) => (
+          <span key={index} className="block">
+            • {point}
+          </span>
+        ))}
       </motion.p>
     </VerticalTimelineElement>
   );

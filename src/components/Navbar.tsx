@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { styles } from "../styles.js";
-import logo from "../assets/web.png";
+import logo from "../assets/code.png";
 import menu from "../assets/menu.svg";
 import close from "../assets/close.svg";
 import { navLinks } from "../constants/index.js";
@@ -14,13 +14,7 @@ const Navbar = ({ mobile }) => {
   useEffect(() => {}, []);
   return (
     <nav
-      style={{
-        paddingLeft: mobile ? "5px" : "54px",
-        paddingRight: mobile ? "5px" : "64px",
-        paddingTop: mobile ? "5px" : "10px",
-        paddingBottom: mobile ? "5px" : "10px",
-      }}
-      className={`${styles.paddingX} w-full flex items-center py-5 fixed top-0 z-20 bg-[#000000ec]`}
+      className={`${styles.paddingX} w-full flex items-center py-5 fixed top-0 z-20 bg-[#000000be]`}
     >
       <div className="w-full flex justify-between items-center max-w-7xl mx-auto ">
         <Link
@@ -31,9 +25,9 @@ const Navbar = ({ mobile }) => {
             window.scrollTo(0, 0);
           }}
         >
-          <img src={logo} alt="logo" className="w-10 h-10 object-contain" />
+          <img src={logo} alt="logo" className="w-8 h-8 object-contain" />
 
-          <p className="cursor-pointer bg-gradient-to-r from-blue-400 via-indigo-600 to-indigo-400 inline-block text-transparent bg-clip-text font-bold text-xl">
+          <p className="cursor-pointer bg-gradient-to-r from-[#8673f3] via-[#a083f6] to-[#cd9ffc] inline-block text-transparent bg-clip-text font-bold text-xl">
             FarSWE
           </p>
         </Link>

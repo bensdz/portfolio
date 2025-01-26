@@ -13,7 +13,14 @@ function MotionBtn() {
               repeat: Infinity,
               repeatType: "reverse",
             }}
-            className="w-2.5 h-2.5 bg-gray-300 rounded-full mb-1"
+            className=" bg-gray-300 border-4"
+            style={{
+              height: "3px",
+              width: "3px",
+              borderRadius: "50%",
+              backgroundColor: "#D1D5DC",
+              size: "3px",
+            }}
           />
         </div>
       </a>
