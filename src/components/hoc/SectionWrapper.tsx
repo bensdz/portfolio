@@ -13,7 +13,7 @@ function SectionWrapper(Component: React.ComponentType, idName: string) {
         className={` max-w-7xl mx-auto relative z-0`}
         style={{
           padding: "2.5rem 1.5rem",
-          "@media (min-width: 640px)": { padding: "4rem 1.5rem" },
+          "@media (minWidth: 640px)": { padding: "4rem 1.5rem" },
         }}
       >
         <div id={idName} />

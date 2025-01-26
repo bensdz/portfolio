@@ -1,7 +1,73 @@
 import React from "react";
+import {
+  VerticalTimeline,
+  VerticalTimelineElement,
+} from "react-vertical-timeline-component";
+import { motion } from "framer-motion";
+import "react-vertical-timeline-component/style.min.css";
+import { styles } from "../styles";
+import SectionWrapper from "./hoc/SectionWrapper";
+import { textVariant } from "../utils/motion";
+import { experiences } from "../constants";
 
-const Experience = () => {
-  return <div>Experience</div>;
+const ExperienceCard = ({ experience, index }) => {
+  return (
+    <VerticalTimelineElement
+      className="vertical-timeline-element--work"
+      contentStyle={{ background: "#151030", color: "#fff" }}
+      contentArrowStyle={{ borderRight: "7px solid  #151030" }}
+      date={experience.date}
+      iconStyle={{
+        background: "#151030",
+        color: "#fff",
+        display: "flex",
+        alignItems: "center",
+        justifyContent: "center",
+      }}
+      icon={
+        <img
+          src={experience.icon}
+          alt="icon"
+          className="w-[80%] h-[80%] mx-auto"
+        />
+      }
+      key={index}
+    >
+      <motion.h3
+        className="vertical-timeline-element-title font-bold text-lg"
+        variants={textVariant()}
+      >
+        {experience.title}
+      </motion.h3>
+      <motion.h4
+        className="vertical-timeline-element-subtitle"
+        variants={textVariant()}
+      >
+        {experience.company_name}
+      </motion.h4>
+      <motion.p className="mt-4" variants={textVariant()}>
+        {experience.description}
+      </motion.p>
+    </VerticalTimelineElement>
+  );
 };
 
-export default Experience;
+const Experience = () => {
+  return (
+    <>
+      <motion.div variants={textVariant()}>
+        <p className={styles.sectionSubText}> What I&apos;ve done</p>
+        <h2 className={styles.sectionHeadText}>Work Experience</h2>
+      </motion.div>
+      <div className="mt-20 flex flex-col">
+        <VerticalTimeline>
+          {experiences.map((experience: any, index: number) => (
+            <ExperienceCard key={index} experience={experience} index={index} />
+          ))}
+        </VerticalTimeline>
+      </div>
+    </>
+  );
+};
+
+export default SectionWrapper(Experience, "experience");

@@ -71,6 +71,12 @@ const Navbar = ({ mobile }) => {
               className={`${
                 !toggle ? "hidden" : "flex"
               } p-6 black-gradient absolute top-20 right-0 mx-4 my-2 min-w-[140px] z-10 rounded-xl`}
+              style={{
+                paddingLeft: mobile ? "10px" : "54px",
+                paddingRight: mobile ? "10px" : "64px",
+                paddingTop: mobile ? "10px" : "10px",
+                paddingBottom: mobile ? "10px" : "10px",
+              }}
             >
               <ul className="list-none flex justify-end items-start flex-1 flex-col gap-4">
                 {navLinks.map((nav) => (
