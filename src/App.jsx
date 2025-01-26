@@ -33,7 +33,7 @@ function App() {
   return (
     <BrowserRouter>
       <div className="relative bg-black-400">
-        <div className="bg-[url(./6173954.jpg)] bg-cover bg-center bg-no-repeat">
+        <div className="bg-[url('/hero.jpg')] bg-cover bg-center bg-no-repeat">
           <Navbar mobile={isMobile} />
           <Hero isMobile={isMobile} />
         </div>
