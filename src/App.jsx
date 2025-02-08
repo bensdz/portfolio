@@ -11,6 +11,7 @@ import {
 } from "./components";
 import StarsCanvas from "./components/canvas/Stars";
 import Footer from "./components/Footer";
+import { heroBg } from "./assets";
 
 function App() {
   const [isMobile, setIsMobile] = useState(false);
@@ -35,7 +36,7 @@ function App() {
       <div className="relative bg-black-400">
         <div
           className="bg-cover bg-center bg-no-repeat "
-          style={{ backgroundImage: "url('/public/hero.jpg')" }}
+          style={{ backgroundImage: `url(${heroBg})` }}
         >
           <Navbar mobile={isMobile} />
           <Hero isMobile={isMobile} />

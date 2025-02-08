@@ -38,6 +38,8 @@ import tripguide from "./tripguide.png";
 import depano from "./depano.png";
 import idstamp from "./idstamp.png";
 
+import heroBg from "./hero.jpg";
+
 export {
   logo,
   backend,
@@ -75,4 +77,5 @@ export {
   idstamp,
   linkedin,
   twitter,
+  heroBg,
 };
