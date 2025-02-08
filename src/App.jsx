@@ -35,7 +35,7 @@ function App() {
       <div className="relative bg-black-400">
         <div
           className="bg-cover bg-center bg-no-repeat "
-          style={{ backgroundImage: "url('./public/hero.jpg')" }}
+          style={{ backgroundImage: "url('/public/hero.jpg')" }}
         >
           <Navbar mobile={isMobile} />
           <Hero isMobile={isMobile} />
