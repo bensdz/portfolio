@@ -20,7 +20,7 @@ export default {
         xs: "450px",
       },
       backgroundImage: {
-        "hero-pattern": "url('/src/assets/hero.jpg')",
+        "hero-pattern": "url('./public/hero.jpg')",
       },
     },
   },
