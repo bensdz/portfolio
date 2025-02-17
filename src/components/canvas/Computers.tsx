@@ -45,7 +45,7 @@ const Computers = ({ mobile, isAutoRotating }) => {
       <ambientLight intensity={0.5} />
       <primitive
         object={computer.scene}
-        scale={mobile ? 0.5 : 0.9}
+        scale={mobile ? 0.5 : 0.8}
         position={mobile ? [0, -2.5, -1] : [0, -4.25, -1.5]}
         rotation={[-0.01, -0.2, -0.1]}
       />

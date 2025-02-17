@@ -80,7 +80,7 @@ const Contact = ({ mobile }) => {
     <div className="xl:mt-12 xl:flex-row flex-col-reverse flex gap-10 overflow-hidden">
       <motion.div
         variants={slideIn("left", "tween", 0.2, 1)}
-        className="flex-[0.75] bg-[#0e0b1f] p-8 rounded-2xl"
+        className="flex-[0.75] bg-[#1a1a1a] p-8 rounded-2xl"
       >
         <p className={styles.sectionSubText}>Get in touch</p>
         <h3 className={styles.sectionHeadText}>Contact Me</h3>
@@ -97,7 +97,7 @@ const Contact = ({ mobile }) => {
               value={form.name}
               onChange={handleChange}
               placeholder="Your Name"
-              className="bg-[#151030] py-4 px-6 placeholder:text-gray-400 text-white rounded-lg outlined-none border-none font-medium "
+              className="bg-[#212121] py-4 px-6 placeholder:text-gray-400 text-white rounded-lg outlined-none border-none font-medium "
             />
           </label>
 
@@ -109,7 +109,7 @@ const Contact = ({ mobile }) => {
               value={form.email}
               onChange={handleChange}
               placeholder="Your Email"
-              className="bg-[#151030] py-4 px-6 placeholder:text-gray-400 text-white rounded-lg outlined-none border-none font-medium "
+              className="bg-[#212121] py-4 px-6 placeholder:text-gray-400 text-white rounded-lg outlined-none border-none font-medium "
             />
           </label>
           <label htmlFor="name" className="flex flex-col">
@@ -120,14 +120,14 @@ const Contact = ({ mobile }) => {
               value={form.message}
               onChange={handleChange}
               placeholder="Type Your Message Here"
-              className="bg-[#151030] py-4 px-6 placeholder:text-gray-400 text-white rounded-lg outlined-none border-none font-medium "
+              className="bg-[#212121] py-4 px-6 placeholder:text-gray-400 text-white rounded-lg outlined-none border-none font-medium "
             />
           </label>
 
           <button
             type="submit"
             disabled={loading}
-            className="bg-[#1d0257] py-4 px-6 rounded-lg font-medium"
+            className="py-4 px-6 rounded-lg font-bold border-gradient "
           >
             {loading ? "Sending..." : "Send"}
           </button>

@@ -33,10 +33,13 @@ function App() {
   }, []);
   return (
     <BrowserRouter>
-      <div className="relative bg-black-400">
+      <div
+        className="relative bg-black-400 z-0 bg-repeat-y scrollbar-hidden"
+        style={{ backgroundImage: `url(${heroBg})` }}
+      >
         <div
-          className="bg-cover bg-center bg-no-repeat "
-          style={{ backgroundImage: `url(${heroBg})` }}
+        //className="bg-cover bg-center bg-no-repeat "
+        //style={{ backgroundImage: `url(${heroBg})` }}
         >
           <Navbar mobile={isMobile} />
           <Hero isMobile={isMobile} />
@@ -45,10 +48,10 @@ function App() {
         <Experience />
         <Tech mobile={isMobile} />
         <Works />
-        <div className="relative z-0">
-          <Contact mobile={isMobile} />
-          <StarsCanvas />
-        </div>
+        <StarsCanvas />
+
+        <Contact mobile={isMobile} />
+
         <Footer />
       </div>
     </BrowserRouter>

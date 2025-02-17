@@ -4,7 +4,7 @@ import { github, linkedin, twitter } from "../assets";
 
 function Footer() {
   return (
-    <div className="bg-[#151030] py-5 px-6">
+    <div className="bg-black py-5 px-6">
       <div className="flex items-center justify-between">
         <div className="flex items-center">
           <img src={logo} alt="logo" className="w-8 h-8 object-contain" />

@@ -24,7 +24,7 @@ const ProjectCard = ({
           scale: 1,
           speed: 450,
         }}
-        className="bg-[#151030] rounded-2xl sm:w-[360px] w-full"
+        className="bg-[#1a1a1a] rounded-2xl sm:w-[360px] w-full"
         style={{ padding: "20px" }}
       >
         <div className="relative w-full h-[230px]">

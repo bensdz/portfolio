@@ -1,7 +1,7 @@
 import {
   mobile,
   backend,
-  creator,
+  hpc,
   web,
   javascript,
   typescript,
@@ -52,7 +52,7 @@ const services = [
   },
   {
     title: "HPC Developer",
-    icon: creator,
+    icon: hpc,
   },
 ];
 
