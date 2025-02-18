@@ -6,7 +6,7 @@ import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
 import Loader from "../Loader";
 
 const Earth = ({ mobile, isAutoRotating }) => {
-  const earth = useGLTF("./planet/scene.gltf");
+  const earth = useGLTF("./earth/scene.gltf");
   const meshRef = useRef();
   const velocity = useRef(0.5);
   const dampingFactor = 0.92;
@@ -45,8 +45,8 @@ const Earth = ({ mobile, isAutoRotating }) => {
       <ambientLight intensity={0.5} />
       <primitive
         object={earth.scene}
-        scale={2.5}
-        position-y={0}
+        scale={2.7}
+        position-y={1}
         rotation-y={0}
       />
     </mesh>

@@ -27,7 +27,7 @@ const ProjectCard = ({
         className="bg-[#1a1a1a] rounded-2xl sm:w-[360px] w-full"
         style={{ padding: "20px" }}
       >
-        <div className="relative w-full h-[230px]">
+        <div className="relative w-full h-[230px] ">
           <img
             src={image}
             alt="project_image"
@@ -92,7 +92,7 @@ const Works = () => {
           This is a collection of some of the projects I have worked on. Some of
           them are personal projects, while others are freelance work. I have
           worked on a variety of projects, ranging from web development to
-          mobile app development. Each projected is linked to its source code on
+          mobile app development. Each project is linked to its source code on
           GitHub.
         </motion.p>
       </div>

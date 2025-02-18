@@ -3,20 +3,33 @@
 import React, { Suspense, useRef, useEffect, useState } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
+import * as THREE from "three";
 import Loader from "../Loader";
-
 const Computers = ({ mobile, isAutoRotating }) => {
-  const computer = useGLTF("./gaming_desktop_pc/scene.gltf");
+  const computer = useGLTF("./working/scene.gltf");
   const meshRef = useRef();
   const velocity = useRef(0.5);
   const dampingFactor = 0.92;
   const [isLoaded, setIsLoaded] = useState(false);
+  const mixerRef = useRef();
 
   useEffect(() => {
-    if (computer) setIsLoaded(true);
+    if (computer) {
+      setIsLoaded(true);
+      const mixer = new THREE.AnimationMixer(computer.scene);
+      const clips = computer.animations;
+      if (clips.length) {
+        const action = mixer.clipAction(clips[0]);
+        action.play();
+      }
+      mixerRef.current = mixer;
+    }
   }, [computer]);
 
   useFrame((_, delta) => {
+    if (mixerRef.current) {
+      mixerRef.current.update(delta);
+    }
     if (!meshRef.current || !isLoaded) return;
 
     if (isAutoRotating) {
@@ -46,8 +59,8 @@ const Computers = ({ mobile, isAutoRotating }) => {
       <primitive
         object={computer.scene}
         scale={mobile ? 0.5 : 0.8}
-        position={mobile ? [0, -2.5, -1] : [0, -4.25, -1.5]}
-        rotation={[-0.01, -0.2, -0.1]}
+        position={mobile ? [0, -4, -1.5] : [0, -5.25, -1.5]}
+        rotation={[0, 0, 0]} // Remove fixed rotation to allow mesh rotation to work
       />
     </mesh>
   );
