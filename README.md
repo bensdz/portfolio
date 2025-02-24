@@ -1,6 +1,6 @@
 # Farouk's Portfolio
 
-![Farouk's Portfolio](./public/portfolio-sc.png)
+![Farouk's Portfolio](./public/portfolio-sc2.png)
 
 This portfolio showcases Farouk's skills as a Full Stack Developer, featuring interactive 3D models, animations, and a responsive design. It is built using React, Three.js (via `@react-three/fiber`), and Tailwind CSS for styling.
 
