@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { styles } from "../styles";
 import ComputerCanvas from "./canvas/Computers";
 import MotionBtn from "./MotionBtn";
+import BlurText from "./animations/BlurText/BlurText";
 
 const Hero = ({ isMobile }) => {
   return (
@@ -14,13 +15,30 @@ const Hero = ({ isMobile }) => {
           <div className="w-1 sm:h-80 h-40 violet-gradient" />
         </div>
         <div>
-          <h1 className={styles.heroHeadText}>
-            This is <span className="text-[#915eff]">Farouk</span>
-            &apos;s Portfolio
-          </h1>
-          <p className={styles.heroSubText}>
-            I am a Full Stack Developer, entrepreneur, and a tech enthusiast.
-          </p>
+          <div className={styles.heroHeadText}>
+            <BlurText
+              text="Hi, I'm "
+              delay={150}
+              animateBy="words"
+              direction="top"
+              className="inline"
+            />
+            <BlurText
+              text="Farouk."
+              delay={150}
+              animateBy="words"
+              direction="top"
+              className="text-[#915eff] inline"
+            />
+          </div>
+
+          <BlurText
+            text="I build innovative web solutions and digital experiences."
+            delay={250}
+            animateBy="words"
+            direction="top"
+            className={styles.heroSubText}
+          />
         </div>
       </div>
 

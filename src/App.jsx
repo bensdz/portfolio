@@ -48,10 +48,11 @@ function App() {
         <Experience />
         <Tech mobile={isMobile} />
         <Works />
-        <StarsCanvas />
 
-        <Contact mobile={isMobile} />
-
+        <div className="relative z-10">
+          <StarsCanvas />
+          <Contact mobile={isMobile} />
+        </div>
         <Footer />
       </div>
     </BrowserRouter>

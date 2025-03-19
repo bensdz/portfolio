@@ -1,11 +1,13 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import React, { useRef, useState } from "react";
+import PropTypes from "prop-types";
 import SectionWrapper from "./hoc/SectionWrapper";
 import emailjs from "@emailjs/browser";
 import { slideIn } from "../utils/motion";
 import { motion } from "framer-motion";
 import { styles } from "../styles";
 import EarthCanvas from "./canvas/Earth";
+import Lanyard from "./animations/Lanyard/Lanyard";
 
 const Contact = ({ mobile }) => {
   const [form, setForm] = useState({
@@ -13,18 +15,16 @@ const Contact = ({ mobile }) => {
     email: "",
     message: "",
   });
-  const formRef = useRef<HTMLFormElement>();
+  const formRef = useRef();
   const [loading, setLoading] = useState(false);
   const [success, setSuccess] = useState(false);
   const [error, setError] = useState("");
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
-  ) => {
+  const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
 
-  const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     setLoading(true);
     if (!form.name) {
@@ -140,15 +140,26 @@ const Contact = ({ mobile }) => {
           {error && <p className="text-red-500 font-medium">{error}</p>}
         </form>
       </motion.div>
-
       <motion.div
         variants={slideIn("right", "tween", 0.2, 1)}
         className="xl:flex-1 xl:h-auto md:h-[550px] h-[350px] "
       >
+        {/* <Lanyard
+            position={[0, 0, 15]}
+            gravity={[0, -40, 0]}
+            fov={20}
+            transparent
+            scale={1}
+          /> */}
         <EarthCanvas mobile={mobile} />
       </motion.div>
     </div>
   );
 };
+const WrappedContact = SectionWrapper(Contact, "contact");
 
-export default SectionWrapper(Contact, "contact");
+Contact.propTypes = {
+  mobile: PropTypes.bool,
+};
+
+export default WrappedContact;
