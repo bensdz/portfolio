@@ -75,7 +75,7 @@ const ComputerCanvas = ({ mobile }) => {
     <Canvas
       frameloop="always"
       shadows
-      camera={{ position: [20, 2, 5], fov: 35 }}
+      camera={{ position: [0, 5, 21], fov: 35 }}
       gl={{ preserveDrawingBuffer: true }}
     >
       <fog attach="fog" args={["#464646", 0, 40]} />
