@@ -6,9 +6,9 @@ import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
 import * as THREE from "three";
 import Loader from "../Loader";
 const Computers = ({ mobile, isAutoRotating }) => {
-  const computer = useGLTF("./working/scene.gltf");
+  const computer = useGLTF("./data_center/scene.gltf");
   const meshRef = useRef();
-  const velocity = useRef(0.5);
+  const velocity = useRef(0.1);
   const dampingFactor = 0.92;
   const [isLoaded, setIsLoaded] = useState(false);
   const mixerRef = useRef();
@@ -44,22 +44,24 @@ const Computers = ({ mobile, isAutoRotating }) => {
   });
 
   return (
-    <mesh ref={meshRef}>
-      <hemisphereLight intensity={0.6} groundColor="white" />
+    <mesh ref={meshRef} castShadow receiveShadow>
+      <hemisphereLight intensity={1.2} groundColor="white" />
       <spotLight
-        position={[-20, 50, 10]}
-        angle={0.3}
+        position={[0, 50, 0]}
+        angle={0}
         penumbra={1}
-        intensity={3}
+        intensity={5}
         castShadow
         shadow-mapSize={1024}
       />
-      <pointLight intensity={2} />
-      <ambientLight intensity={0.5} />
+      <pointLight intensity={3} />
+      <ambientLight intensity={1.5} />
+      <pointLight position={[10, 10, 10]} intensity={2} />
+      <directionalLight position={[0, 10, 5]} intensity={2} />
       <primitive
         object={computer.scene}
-        scale={mobile ? 0.5 : 0.8}
-        position={mobile ? [0, -4, -1.5] : [0, -5.25, -1.5]}
+        scale={mobile ? 0.15 : 0.3}
+        position={mobile ? [0, -3, -1.5] : [0, -4.25, -1.5]}
         rotation={[0, 0, 0]} // Remove fixed rotation to allow mesh rotation to work
       />
     </mesh>
@@ -76,6 +78,7 @@ const ComputerCanvas = ({ mobile }) => {
       camera={{ position: [20, 2, 5], fov: 35 }}
       gl={{ preserveDrawingBuffer: true }}
     >
+      <fog attach="fog" args={["#464646", 0, 40]} />
       <Suspense fallback={<Loader />}>
         <OrbitControls
           enableZoom={false}

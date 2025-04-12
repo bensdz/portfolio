@@ -29,7 +29,7 @@ import app from "./company/app.png";
 import depano from "./depano.png";
 import idstamp from "./idstamp.png";
 
-import heroBg from "./Looper.png";
+import heroBg from "./hero.jpg";
 
 export {
   backend,

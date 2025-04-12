@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { styles } from "../styles";
 import ComputerCanvas from "./canvas/Computers";
 import MotionBtn from "./MotionBtn";

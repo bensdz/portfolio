@@ -34,12 +34,14 @@ function App() {
   return (
     <BrowserRouter>
       <div
-        className="relative bg-black-400 z-0 bg-repeat-y scrollbar-hidden"
-        style={{ backgroundImage: `url(${heroBg})` }}
+        className="relative bg-[#1f1f1f] z-0 bg-repeat-y scrollbar-hidden"
+        //style={{ backgroundImage: `url(${heroBg})` }}
       >
         <div
-        //className="bg-cover bg-center bg-no-repeat "
-        //style={{ backgroundImage: `url(${heroBg})` }}
+          className="bg-cover bg-no-repeat bg-bottom"
+          style={{
+            backgroundImage: `url(${heroBg})`,
+          }}
         >
           <Navbar mobile={isMobile} />
           <Hero isMobile={isMobile} />
