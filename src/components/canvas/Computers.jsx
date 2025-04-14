@@ -82,7 +82,11 @@ const ComputerCanvas = ({ mobile }) => {
       frameloop="always"
       shadows={!mobile}
       camera={{ position: [0, 5, 21], fov: 35 }}
-      gl={!mobile ? { preserveDrawingBuffer: true } : undefined}
+      gl={
+        mobile
+          ? { powerPreference: "low-power" }
+          : { preserveDrawingBuffer: true }
+      }
     >
       {!mobile && <fog attach="fog" args={["#464646", 0, 40]} />}
       <Suspense fallback={<Loader />}>
