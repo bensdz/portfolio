@@ -16,10 +16,10 @@ const Ball = ({ imgUrl, mobile }) => {
 
   return (
     <Float speed={1.75} rotationIntensity={1} floatIntensity={2}>
-      <ambientLight intensity={0.25} />
+      <ambientLight intensity={mobile ? 0.15 : 0.25} />
       <directionalLight position={[0, 0, 0.05]} />
-      <mesh castShadow receiveShadow scale={2}>
-        <sphereGeometry args={[1, 32, 32]} />
+      <mesh castShadow={!mobile} receiveShadow={!mobile} scale={2}>
+        <sphereGeometry args={[1, mobile ? 16 : 32, mobile ? 16 : 32]} />
         <meshStandardMaterial
           color="#fff8eb"
           polygonOffset
@@ -41,8 +41,8 @@ const BallCanvas = ({ icon, mobile }) => {
   return (
     <Canvas
       frameloop="demand"
-      dpr={[1, 2]}
-      gl={{ preserveDrawingBuffer: true }}
+      dpr={mobile ? [1, 1] : [1, 2]}
+      gl={!mobile ? { preserveDrawingBuffer: true } : undefined}
     >
       <Suspense fallback={<Loader />}>
         <OrbitControls enableZoom={false} />

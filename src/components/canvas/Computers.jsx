@@ -1,16 +1,18 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable react/no-unknown-property */
-import React, { Suspense, useRef, useEffect, useState } from "react";
+import { Suspense, useRef, useEffect, useState } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { OrbitControls, Preload, useGLTF } from "@react-three/drei";
 import * as THREE from "three";
 import Loader from "../Loader";
 const Computers = ({ mobile, isAutoRotating }) => {
   const computer = useGLTF("./data_center/scene.gltf");
+  /** @type {React.MutableRefObject<THREE.Mesh>} */
   const meshRef = useRef();
   const velocity = useRef(0.1);
   const dampingFactor = 0.92;
   const [isLoaded, setIsLoaded] = useState(false);
+  /** @type {React.MutableRefObject<THREE.AnimationMixer | undefined>} */
   const mixerRef = useRef();
 
   useEffect(() => {
@@ -44,20 +46,24 @@ const Computers = ({ mobile, isAutoRotating }) => {
   });
 
   return (
-    <mesh ref={meshRef} castShadow receiveShadow>
-      <hemisphereLight intensity={1.2} groundColor="white" />
-      <spotLight
-        position={[0, 50, 0]}
-        angle={0}
-        penumbra={1}
-        intensity={5}
-        castShadow
-        shadow-mapSize={1024}
-      />
-      <pointLight intensity={3} />
-      <ambientLight intensity={1.5} />
-      <pointLight position={[10, 10, 10]} intensity={2} />
-      <directionalLight position={[0, 10, 5]} intensity={2} />
+    <mesh ref={meshRef} castShadow={!mobile} receiveShadow={!mobile}>
+      <hemisphereLight intensity={mobile ? 0.5 : 1.2} groundColor="white" />
+      {!mobile && (
+        <>
+          <spotLight
+            position={[0, 50, 0]}
+            angle={0}
+            penumbra={1}
+            intensity={5}
+            castShadow
+            shadow-mapSize={1024}
+          />
+          <pointLight intensity={3} />
+          <pointLight position={[10, 10, 10]} intensity={2} />
+          <directionalLight position={[0, 10, 5]} intensity={2} />
+        </>
+      )}
+      <ambientLight intensity={mobile ? 0.8 : 1.5} />
       <primitive
         object={computer.scene}
         scale={mobile ? 0.15 : 0.3}
@@ -74,11 +80,11 @@ const ComputerCanvas = ({ mobile }) => {
   return (
     <Canvas
       frameloop="always"
-      shadows
+      shadows={!mobile}
       camera={{ position: [0, 5, 21], fov: 35 }}
-      gl={{ preserveDrawingBuffer: true }}
+      gl={!mobile ? { preserveDrawingBuffer: true } : undefined}
     >
-      <fog attach="fog" args={["#464646", 0, 40]} />
+      {!mobile && <fog attach="fog" args={["#464646", 0, 40]} />}
       <Suspense fallback={<Loader />}>
         <OrbitControls
           enableZoom={false}
