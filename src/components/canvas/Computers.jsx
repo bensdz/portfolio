@@ -78,28 +78,30 @@ const ComputerCanvas = ({ mobile }) => {
   const [isAutoRotating, setIsAutoRotating] = useState(true);
 
   return (
-    <Canvas
-      frameloop="always"
-      shadows={!mobile}
-      camera={{ position: [0, 5, 21], fov: 35 }}
-      gl={
-        mobile
-          ? { powerPreference: "low-power" }
-          : { preserveDrawingBuffer: true }
-      }
-    >
-      {!mobile && <fog attach="fog" args={["#464646", 0, 40]} />}
-      <Suspense fallback={<Loader />}>
-        <OrbitControls
-          enableZoom={false}
-          maxPolarAngle={Math.PI / 2}
-          minPolarAngle={Math.PI / 2}
-          onStart={() => setIsAutoRotating(false)}
-        />
-        <Computers mobile={mobile} isAutoRotating={isAutoRotating} />
-      </Suspense>
-      <Preload all />
-    </Canvas>
+    <div className="w-full h-full absolute inset-0 z-0">
+      <Canvas
+        frameloop="always"
+        shadows={!mobile}
+        camera={{ position: [0, 5, 21], fov: 35 }}
+        gl={
+          mobile
+            ? { powerPreference: "low-power" }
+            : { preserveDrawingBuffer: true }
+        }
+      >
+        {!mobile && <fog attach="fog" args={["#464646", 0, 40]} />}
+        <Suspense fallback={<Loader />}>
+          <OrbitControls
+            enableZoom={false}
+            maxPolarAngle={Math.PI / 2}
+            minPolarAngle={Math.PI / 2}
+            onStart={() => setIsAutoRotating(false)}
+          />
+          <Computers mobile={mobile} isAutoRotating={isAutoRotating} />
+        </Suspense>
+        <Preload all />
+      </Canvas>
+    </div>
   );
 };
 

@@ -2,26 +2,44 @@ import React from "react";
 import { motion } from "framer-motion";
 
 function MotionBtn() {
+  const arrowVariants = {
+    animate: (i) => ({
+      y: [0, 10, 0],
+      opacity: [1, 0.7, 1],
+      transition: {
+        delay: i * 0.2, // Stagger the animation
+        duration: 1.5,
+        repeat: Infinity,
+        repeatType: "loop",
+        ease: "easeInOut",
+      },
+    }),
+  };
+
   return (
-    <div className="absolute xs:bottom-20  bottom-1 w-full flex justify-center items-center ">
+    <div className="absolute xs:bottom-10 bottom-5 w-full flex justify-center items-center ">
       <a href="#about">
-        <div className="w-[25px] h-[38px] rounded-3xl border-4 border-gray-300 flex justify-center items-start p-2">
+        <div className="flex flex-col items-center">
           <motion.div
-            animate={{ y: [0, 15, 0] }}
-            transition={{
-              duration: 2,
-              repeat: Infinity,
-              repeatType: "reverse",
-            }}
-            className=" bg-gray-300 border-4"
-            style={{
-              height: "3px",
-              width: "3px",
-              borderRadius: "50%",
-              backgroundColor: "#D1D5DC",
-              size: "3px",
-            }}
-          />
+            variants={arrowVariants}
+            animate="animate"
+            className="w-6 h-6"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={2}
+              stroke="currentColor"
+              className="w-full h-full text-gray-200"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M19.5 5.25l-7.5 7.5-7.5-7.5m15 6l-7.5 7.5-7.5-7.5"
+              />
+            </svg>
+          </motion.div>
         </div>
       </a>
     </div>

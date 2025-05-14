@@ -17,7 +17,7 @@ const Hero = ({ isMobile }) => {
         <div>
           <div className={styles.heroHeadText}>
             <BlurText
-              text="Hi, I'm "
+              text="Hey There! This is "
               delay={150}
               animateBy="words"
               direction="top"

@@ -34,7 +34,7 @@ function App() {
   return (
     <BrowserRouter>
       <div
-        className="relative bg-[#1f1f1f] z-0 bg-repeat-y scrollbar-hidden"
+        className="relative bg-[#091017] z-0 bg-repeat-y scrollbar-hidden"
         //style={{ backgroundImage: `url(${heroBg})` }}
       >
         <div

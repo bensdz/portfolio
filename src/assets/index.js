@@ -21,6 +21,13 @@ import redux from "./tech/redux.png";
 import tailwind from "./tech/tailwind.png";
 import typescript from "./tech/typescript.png";
 import threejs from "./tech/threejs.png";
+import remix from "./tech/remix.png";
+import nextjs from "./tech/nextjs.png";
+import expressjs from "./tech/expressjs.png";
+import aws from "./tech/aws.png";
+import golang from "./tech/golang.png";
+import nestjs from "./tech/nestjs.png";
+import reactnative from "./tech/reactnative.png";
 
 import onm from "./company/onm.png";
 import webdev from "./company/webdev.png";
@@ -60,4 +67,11 @@ export {
   linkedin,
   twitter,
   heroBg,
+  remix,
+  nextjs,
+  expressjs,
+  aws,
+  golang,
+  nestjs,
+  reactnative,
 };
