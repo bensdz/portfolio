@@ -5,14 +5,9 @@ import {
   web,
   javascript,
   typescript,
-  html,
-  css,
   reactjs,
-  redux,
   tailwind,
-  nodejs,
   mongodb,
-  git,
   docker,
   threejs,
   onm,
@@ -23,10 +18,10 @@ import {
   remix,
   nextjs,
   expressjs,
-  aws,
   golang,
   nestjs,
   reactnative,
+  covercraft,
 } from "../assets";
 
 export const navLinks = [
@@ -206,6 +201,31 @@ const projects = [
     ],
     image: idstamp,
     source_code_link: "https://github.com/bensdz/IDstampDash",
+  },
+  {
+    name: "Covercraft - Fullstack Cover Letter Generator",
+    description:
+      "A full-stack web application that allows users to generate cover letters using AI.",
+    tags: [
+      {
+        name: "nextjs",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "postgresql",
+        color: "green-text-gradient",
+      },
+      {
+        name: "expressjs",
+        color: "pink-text-gradient",
+      },
+      {
+        name: "nodejs",
+        color: "purple-text-gradient",
+      },
+    ],
+    image: covercraft,
+    source_code_link: "https://covercraftapp.vercel.app/",
   },
   // {
   //   name: "Woocommerce - External Payment Integration",

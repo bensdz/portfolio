@@ -35,6 +35,7 @@ import app from "./company/app.png";
 
 import depano from "./depano.png";
 import idstamp from "./idstamp.png";
+import covercraft from "./covercraft.png";
 
 import heroBg from "./hero.jpg";
 
@@ -74,4 +75,5 @@ export {
   golang,
   nestjs,
   reactnative,
+  covercraft,
 };
