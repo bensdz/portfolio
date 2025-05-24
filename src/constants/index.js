@@ -22,6 +22,7 @@ import {
   nestjs,
   reactnative,
   covercraft,
+  floka,
 } from "../assets";
 
 export const navLinks = [
@@ -227,27 +228,23 @@ const projects = [
     image: covercraft,
     source_code_link: "https://covercraftapp.vercel.app/",
   },
-  // {
-  //   name: "Woocommerce - External Payment Integration",
-  //   description:
-  //     "A plugin that allows users to pay for their orders using an external payment gateway.",
-  //   tags: [
-  //     {
-  //       name: "wordpress",
-  //       color: "blue-text-gradient",
-  //     },
-  //     {
-  //       name: "woocommerce",
-  //       color: "green-text-gradient",
-  //     },
-  //     {
-  //       name: "php",
-  //       color: "pink-text-gradient",
-  //     },
-  //   ],
-  //   image: jobit,
-  //   source_code_link: "https://github.com/bensdz/wc_custom_payment_gateway",
-  // },
+  {
+    name: "Floka - Golang Docker Clone",
+    description:
+      "A minimal container runtime built from scratch using Go, namespaces, and cgroups.",
+    tags: [
+      {
+        name: "go",
+        color: "blue-text-gradient",
+      },
+      {
+        name: "linux",
+        color: "green-text-gradient",
+      },
+    ],
+    image: floka,
+    source_code_link: "https://github.com/bensdz/floka",
+  },
 ];
 
 export { services, technologies, experiences, projects };
